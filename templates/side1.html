@@ -1,0 +1,126 @@
+{% if request.user.is_authenticated %}
+<div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+    <div class="mdk-drawer__content ">
+        <div class="sidebar sidebar-left sidebar-dark bg-dark o-hidden" data-perfect-scrollbar>
+            <div class="sidebar-p-y">
+
+                <div class="sidebar-heading">More</div>
+                <ul class="sidebar-menu sm-active-button-bg">
+                    <!-- <li class="sidebar-menu-item {% if 'catalogue' in segment %} active {% endif %}">
+                        <a class="sidebar-menu-button" href="/catalogue/">
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">search</i> Catalogue
+                        </a>
+                    </li> -->
+                    <li class="sidebar-menu-item {% if 'dashboard' in segment %} active {% endif %}">
+                        <a class="sidebar-menu-button" href="/dashboard/">
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i>
+                            dashboard
+                        </a>
+                    </li>
+                    <!-- <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="student-take-course.html">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">class</i> Take Course
+                                            <span class="sidebar-menu-badge badge badge-primary ml-auto">PRO</span>
+                                        </a>
+                                    </li> -->
+                    <li class="sidebar-menu-item {% if 'profile' in segment %} active {% endif %}">
+                        <a class="sidebar-menu-button" href="/profile/">
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">dvr</i> Profile
+                        </a>
+                    </li>
+                    <!-- <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button"
+                                href="/import">
+                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">poll</i> Add questions
+                        </a>
+                    </li> -->
+                    <!-- <li class="sidebar-menu-item {% if 'mycourses.html' in segment %} active {% endif %}">
+                                        <a class="sidebar-menu-button"
+                                           href="mycourses.html">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">school</i> My Courses
+                                        </a>
+                                    </li> -->
+                    {% if request.user.is_superuser %}
+                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           data-toggle="collapse"
+                                           href="#forum_menu">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">chat_bubble_outline</i>
+                                            Admin 
+                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                        </a>
+                                        <ul class="sidebar-submenu sm-indent collapse"
+                                            id="forum_menu">
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/addcat">
+                                                    <span class="sidebar-menu-text">Add Category</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/import">
+                                                    <span class="sidebar-menu-text">Add Course</span>
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/deletecat">
+                                                    <span class="sidebar-menu-text">Delete Category</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/deletecourse">
+                                                    <span class="sidebar-menu-text">Delete Course</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/updatekeywords">
+                                                    <span class="sidebar-menu-text">Update Keywords</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/userslist">
+                                                    <span class="sidebar-menu-text">Users list</span>
+                                                </a>
+                                            </li>
+
+                                            <!-- <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="/addcourse">
+                                                    <span class="sidebar-menu-text">Add Course</span>
+                                                </a>
+                                            </li> -->
+                                            
+                                        </ul>
+                                    </li>
+                                    {% endif %}
+                                    <!-- <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="student-help-center.html">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">live_help</i> Get Help
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="guest-login.html">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">lock_open</i> Logout
+                                        </a>
+                                    </li> -->
+                </ul>
+                <!-- Components menu -->
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
